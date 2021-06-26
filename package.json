@@ -1,6 +1,6 @@
 {
   "name": "esbuild-create-react-app",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "main": "bin/index.js",
   "bin": {
     "esbuild-create-react-app": "bin/index.js"
@@ -12,7 +12,8 @@
     "lint": "eslint \"src/**/*.ts\" --max-warnings=0",
     "commit": "git cz",
     "start": "tsc -w",
-    "build": "rm -rf bin && tsc"
+    "build": "rm -rf bin && tsc",
+    "semantic-release": "semantic-release"
   },
   "engines": {
     "node": ">=12"
@@ -38,7 +39,8 @@
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.1",
     "semantic-release-cli": "^5.4.3",
-    "typescript": "^4.3.4"
+    "typescript": "^4.3.4",
+    "semantic-release": "^17.4.4"
   },
   "lint-staged": {
     "*.+(ts)": "eslint --fix",
@@ -63,5 +65,9 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/awran5/esbuild-create-react-app.git"
   }
 }
