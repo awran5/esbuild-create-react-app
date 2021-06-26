@@ -13,7 +13,7 @@
     "commit": "git cz",
     "start": "tsc -w",
     "build": "rm -rf bin && tsc",
-    "semantic-release": "semantic-release"
+    "release": "semantic-release -b main"
   },
   "engines": {
     "node": ">=12"
