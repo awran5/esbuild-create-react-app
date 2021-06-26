@@ -1,15 +1,16 @@
 # esbuild Create React App [![NPM](https://img.shields.io/npm/v/esbuild-create-react-app.svg)](https://www.npmjs.com/package/esbuild-create-react-app) ![npm bundle size](https://img.shields.io/bundlephobia/min/esbuild-create-react-app) ![GitHub](https://img.shields.io/github/license/awran5/esbuild-create-react-app)
 
+<br />
 <img alt="Logo" align="right" src="./assets/logo.png" width="20%" />
 
 A minimal replacement for create-react-app using a truly blazing fast [esbuild](https://esbuild.github.io/) bundler. Up and running in less than 1 minute with almost zero configuration needed.
+
+<br />
+<br />
+<br />
 <br />
 
----
-
 ## What is inside?
-
-<img alt="file structure" align="right" src="./assets/files.png" width="20%">
 
 Truly minimal React app with almost zero configuration needed.
 
@@ -21,6 +22,8 @@ Truly minimal React app with almost zero configuration needed.
 - [lint-staged](https://github.com/okonet/lint-staged)
 - [live-server](https://github.com/tapio/live-server)
 
+---
+
 ## Overview
 
 <p align='center'>
@@ -29,7 +32,7 @@ Truly minimal React app with almost zero configuration needed.
 
 ## Install
 
-```bash
+```sh
 npx esbuild-create-react-app my-app
 
 cd my-app
