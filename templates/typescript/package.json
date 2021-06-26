@@ -1,0 +1,48 @@
+{
+  "name": "esbuild-react-app-ts",
+  "version": "1.0.0",
+  "main": "builder.js",
+  "author": "awran5",
+  "license": "MIT",
+  "scripts": {
+    "pre-commit": "lint-staged",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" --max-warnings=0" ,
+    "start": "node builder.js",
+    "build": "esbuild src/index.tsx --minify --format=cjs --outdir=public --sourcemap --bundle"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/live-server": "^1.2.0",
+    "@types/node": "^15.12.4",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.8",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "chokidar": "^3.5.2",
+    "esbuild": "^0.12.9",
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "live-server": "^1.2.1",
+    "prettier": "^2.3.1",
+    "typescript": "^4.3.4"
+  },
+  "lint-staged": {
+    "*.+(js|jsx)": "eslint --fix",
+    "*.+(json|css|md)": "prettier --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

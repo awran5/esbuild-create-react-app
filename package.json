@@ -1,0 +1,67 @@
+{
+  "name": "esbuild-create-react-app",
+  "version": "1.0.0",
+  "main": "bin/index.js",
+  "bin": {
+    "esbuild-create-react-app": "bin/index.js"
+  },
+  "author": "awran5",
+  "license": "MIT",
+  "scripts": {
+    "pre-commit": "lint-staged",
+    "lint": "eslint \"src/**/*.ts\" --max-warnings=0",
+    "commit": "git cz",
+    "start": "tsc -w",
+    "build": "rm -rf bin && tsc"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "inquirer": "^8.1.1",
+    "listr2": "^3.10.0",
+    "ora": "^5.4.1"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^7.3.2",
+    "@types/node": "^15.12.4",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.1",
+    "semantic-release-cli": "^5.4.3",
+    "typescript": "^4.3.4"
+  },
+  "lint-staged": {
+    "*.+(ts)": "eslint --fix",
+    "*.+(json|md)": "prettier --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "keywords": [
+    "esbuild",
+    "create react app",
+    "react typescript"
+  ],
+  "tags": [
+    "esbuild",
+    "create-react-app",
+    "react-typescript"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}
