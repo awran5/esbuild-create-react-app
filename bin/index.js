@@ -13,12 +13,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const functions_1 = __importDefault(require("./functions"));
+const projectName_1 = require("./projectName");
+const tasks_1 = __importDefault(require("./tasks"));
 (() => __awaiter(void 0, void 0, void 0, function* () {
+    const projectName = yield projectName_1.getProjectName();
     try {
-        yield functions_1.default();
+        yield tasks_1.default(projectName);
     }
     catch (error) {
         console.log(error);
+        process.exit(1);
     }
 }))();

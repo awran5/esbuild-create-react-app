@@ -1,14 +1,17 @@
 #!/usr/bin/env node
-
-import createProject from './functions'
+import { getProjectName } from './projectName'
+import createProject from './tasks'
 
 /**
- *Create a new project
+ * Create a new project
  */
 ;(async () => {
+  const projectName = await getProjectName()
+
   try {
-    await createProject()
+    await createProject(projectName)
   } catch (error) {
     console.log(error)
+    process.exit(1)
   }
 })()

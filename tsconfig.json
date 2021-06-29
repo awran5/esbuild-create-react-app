@@ -17,5 +17,5 @@
     "baseUrl": "."
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "templates", "assets"]
+  "exclude": ["node_modules", "assets"]
 }
