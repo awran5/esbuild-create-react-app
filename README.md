@@ -42,8 +42,8 @@ yarn start | npm run start
 
 ## Available Templates
 
-- Default [JS template](https://github.com/awran5/esbuild-create-react-app/tree/main/templates/javascript)
-- [Typescript template](https://github.com/awran5/esbuild-create-react-app/tree/main/templates/typescript)
+- Default [JS template](https://github.com/awran5/esbuild-react-app-js-template)
+- [Typescript template](https://github.com/awran5/esbuild-react-app-ts-template)
 
 ### License
 
