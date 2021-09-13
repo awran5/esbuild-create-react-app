@@ -4,7 +4,7 @@
   "exports": "./bin/index.js",
   "type": "module",
   "bin": {
-    "esbuild-create-react-app-local": "bin/index.js"
+    "esbuild-create-react-app": "bin/index.js"
   },
   "author": "awran5",
   "license": "MIT",
