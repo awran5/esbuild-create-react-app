@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { getProjectName } from './projectName'
-import createProject from './tasks'
+import { getProjectName } from './projectName.js'
+import createProject from './tasks.js'
 
 /**
  * Create a new project

@@ -5,7 +5,7 @@ import { exec } from 'child_process'
 import chalk from 'chalk'
 import { Listr } from 'listr2'
 import ora from 'ora'
-import { removeDir, confirmInquirer, templateInquirer } from './functions'
+import { removeDir, confirmInquirer, templateInquirer } from './functions.js'
 
 const asyncExec = promisify(exec)
 
@@ -59,23 +59,35 @@ async function updateFiles(projectName: string) {
   let author = 'your-name'
 
   try {
-    author = (await asyncExec(`git config --global user.email`)).stdout.trim()
+    author = (await asyncExec(`git config --global user.name`)).stdout.trim()
   } catch (e) {
     author = 'your-name'
   }
 
-  // Update package.json
-  const packageJson = `${projectName}/package.json`
-  const read = await readFile(packageJson, 'utf-8')
-  const parse = JSON.parse(read)
-  const newPackageJson = {
-    ...parse,
-    name: projectName,
-    author
+  // Update license year and author
+  try {
+    const license = `${projectName}/LICENSE`
+    let newLicense = await readFile(license, 'utf-8')
+    newLicense = newLicense.replace(/<author>/, author)
+    newLicense = newLicense.replace(/<year>/, `${new Date().getFullYear()}-present`)
+    // Write a new license file
+    await writeFile(license, newLicense, 'utf8')
+  } catch (err) {
+    console.log(`Failed to update LICENSE. ${err}`)
+    process.exit(1)
   }
 
-  // Write a new package.json
+  // Update package.json
   try {
+    const packageJson = `${projectName}/package.json`
+    const read = await readFile(packageJson, 'utf-8')
+    const parse = JSON.parse(read)
+    const newPackageJson = {
+      ...parse,
+      name: projectName,
+      author
+    }
+    // Write a new package.json
     await writeFile(packageJson, JSON.stringify(newPackageJson, null, 2), 'utf8')
   } catch (err) {
     console.log(`Failed to update package.json. ${err}`)
@@ -85,12 +97,6 @@ async function updateFiles(projectName: string) {
   // Initialize a fresh Git
   try {
     await removeDir(`${projectName}/.git`)
-  } catch (err) {
-    console.log(err)
-    process.exit(1)
-  }
-
-  try {
     await asyncExec(`git init && git add . && git commit -m "initial commit"`, { cwd: projectName })
   } catch (err) {
     console.log(`Failed to initialize git. ${err}`)
@@ -165,19 +171,19 @@ export default async function createProject(projectName: string) {
       {
         title: `[1/5] 🚀 Creating a New Project in ${chalk.cyan(projectName)}`,
         task: async () =>
-          mkdir(projectName).catch((err) => console.log(`Failed to create ${chalk.cyan(projectName)}. ${err}`))
+          await mkdir(projectName).catch((err) => console.log(`Failed to create ${chalk.cyan(projectName)}. ${err}`))
       },
       {
         title: `[2/5] 🍳 Fetching Repositories...`,
-        task: async () => fetchTemplateRepo(projectName, selectedTemplate)
+        task: async () => await fetchTemplateRepo(projectName, selectedTemplate)
       },
       {
         title: '[3/5] 🔗 Installing Dependencies...',
-        task: () => installDependencies(projectName)
+        task: async () => await installDependencies(projectName)
       },
       {
         title: '[4/5] 🎁 Updating files...',
-        task: () => updateFiles(projectName)
+        task: async () => await updateFiles(projectName)
       },
       {
         title: '[5/5] ✨ All done...',

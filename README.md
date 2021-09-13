@@ -40,6 +40,10 @@ cd my-app
 yarn start | npm run start
 ```
 
+### Known issue
+
+Inquirer select does't work on Windows 10 git bash Terminal [mintty](https://github.com/mintty/mintty), It works fine on integrated VS Code Terminal though.
+
 ## Available Templates
 
 - Default [JS template](https://github.com/awran5/esbuild-react-app-js-template)
