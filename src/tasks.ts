@@ -5,7 +5,7 @@ import { exec } from 'child_process'
 import chalk from 'chalk'
 import { Listr } from 'listr2'
 import ora from 'ora'
-import { removeDir, confirmInquirer, templateInquirer } from './functions.js'
+import { removeDir, confirmInquirer, templateInquirer } from './functions'
 
 const asyncExec = promisify(exec)
 
@@ -171,23 +171,26 @@ export default async function createProject(projectName: string) {
       {
         title: `[1/5] 🚀 Creating a New Project in ${chalk.cyan(projectName)}`,
         task: async () =>
-          await mkdir(projectName).catch((err) => console.log(`Failed to create ${chalk.cyan(projectName)}. ${err}`))
+          mkdir(projectName).catch((err) => console.log(`Failed to create ${chalk.cyan(projectName)}. ${err}`))
       },
       {
         title: `[2/5] 🍳 Fetching Repositories...`,
-        task: async () => await fetchTemplateRepo(projectName, selectedTemplate)
+        task: async () => fetchTemplateRepo(projectName, selectedTemplate)
       },
       {
         title: '[3/5] 🔗 Installing Dependencies...',
-        task: async () => await installDependencies(projectName)
+        task: async () => installDependencies(projectName)
       },
       {
         title: '[4/5] 🎁 Updating files...',
-        task: async () => await updateFiles(projectName)
+        task: async () => updateFiles(projectName)
       },
       {
         title: '[5/5] ✨ All done...',
-        task: () => new Promise<void>((resolve) => setTimeout(resolve, 500))
+        task: () =>
+          new Promise((resolve) => {
+            setTimeout(resolve, 1000)
+          })
       }
     ],
     {
