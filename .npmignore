@@ -1,7 +1,9 @@
-src
+.github
+.husky
 assets
-.eslintignore
+src
 .editorconfig
+.eslintignore
 .eslintrc.js
 .prettierrc
 tsconfig.json
