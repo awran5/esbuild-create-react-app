@@ -6,7 +6,7 @@
   "bin": {
     "esbuild-create-react-app": "bin/index.js"
   },
-  "author": "awran5",
+  "author": "awran5 <awran5@yahoo.com> (https://awran5.vercel.app)",
   "license": "MIT",
   "scripts": {
     "pre-commit": "lint-staged",
@@ -17,31 +17,31 @@
     "release": "semantic-release -b main"
   },
   "engines": {
-    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+    "node": ">=16.0.0"
   },
   "dependencies": {
-    "chalk": "^4.1.2",
-    "inquirer": "^8.1.2",
-    "listr2": "^3.12.0",
-    "ora": "^6.0.0"
+    "chalk": "^5.1.2",
+    "inquirer": "^9.1.4",
+    "listr2": "^5.0.5",
+    "ora": "^6.1.2"
   },
   "devDependencies": {
-    "@types/inquirer": "^8.1.1",
-    "@types/node": "^16.9.1",
-    "@typescript-eslint/eslint-plugin": "^4.31.0",
-    "@typescript-eslint/parser": "^4.31.0",
-    "commitizen": "^4.2.4",
+    "@types/inquirer": "^9.0.2",
+    "@types/node": "^18.11.7",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
+    "commitizen": "^4.2.5",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.24.2",
-    "husky": "^7.0.2",
-    "lint-staged": "^11.1.2",
-    "prettier": "^2.4.0",
-    "semantic-release": "^17.4.7",
+    "eslint": "^8.26.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "semantic-release": "^19.0.5",
     "semantic-release-cli": "^5.4.4",
-    "typescript": "^4.4.3"
+    "typescript": "^4.8.4"
   },
   "lint-staged": {
     "*.+(ts)": "eslint --fix",
