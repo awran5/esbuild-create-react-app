@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "lib": ["ESNext"],
+    "removeComments": true,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -9,8 +10,8 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "ES2020",
-    "moduleResolution": "node",
+    "module": "Node16",
+    "moduleResolution": "Node16",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "outDir": "bin",
