@@ -12,6 +12,7 @@
     "pre-commit": "lint-staged",
     "lint": "eslint \"src/**/*.ts\" --max-warnings=0",
     "commit": "git cz",
+    "changes": "auto-changelog -p --template keepachangelog && git add CHANGELOG.md",
     "start": "tsc -w",
     "build": "rm -rf bin && tsc",
     "release": "semantic-release -b main"
