@@ -31,10 +31,10 @@ jobs:
         uses: bahmutov/npm-install@v1
 
       - name: Build
-        run: yarn build
+        run: npm run build
 
       - name: Release
-        run: yarn release
+        run: npm publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
