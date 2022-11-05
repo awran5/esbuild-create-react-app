@@ -3,40 +3,39 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: ['airbnb-base', 'prettier'],
-  parser: '@typescript-eslint/parser',
+  extends: ["airbnb-base", "prettier"],
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: 12,
-    sourceType: 'module'
+    sourceType: "module"
   },
-  plugins: ['@typescript-eslint'],
+  plugins: ["@typescript-eslint"],
   rules: {
-    'import/extensions': [
-      'error',
-      'always',
-      'ignorePackages',
+    "import/extensions": [
+      "error",
+      "always",
       {
-        '': 'never',
-        js: 'never',
-        ts: 'never'
+        js: "never",
+        ts: "never"
       }
     ],
-    'no-console': 0,
-    'no-use-before-define': 'off',
-    'no-unused-vars': 'warn',
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-    'import/prefer-default-export': 0,
-    'import/newline-after-import': 0,
-    'no-shadow': 1,
-    'prefer-const': 1,
-    'prefer-spread': 1,
-    'no-unused-expressions': ['error', { allowShortCircuit: true, allowTernary: true }]
+    "no-console": 0,
+    "no-param-reassign": 0,
+    "no-use-before-define": "off",
+    "no-unused-vars": "warn",
+    "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
+    "import/prefer-default-export": 0,
+    "import/newline-after-import": 0,
+    "no-shadow": 1,
+    "prefer-const": 1,
+    "prefer-spread": 1,
+    "no-unused-expressions": ["error", { allowShortCircuit: true, allowTernary: true }]
   },
   settings: {
-    'import/resolver': {
+    "import/resolver": {
       node: {
-        extensions: ['.js', '.ts']
+        extensions: [".js", ".ts"]
       }
     }
   }
-}
+};
