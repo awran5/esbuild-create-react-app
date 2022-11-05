@@ -4,6 +4,6 @@ assets
 src
 .editorconfig
 .eslintignore
-.eslintrc.js
+.eslintrc.cjs
 .prettierrc
 tsconfig.json
